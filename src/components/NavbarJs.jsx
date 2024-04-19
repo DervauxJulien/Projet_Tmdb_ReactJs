@@ -8,9 +8,8 @@ import { Modal } from 'react-bootstrap';
 import CardMovie from './CardMovie';
 import CardSerie from './CardSerie';
 import { useState } from 'react';
-import '/STYLE/style.css'
+import '/STYLE/style.css';
 import PaginationComponent from './PaginationComponent';
-
 
 const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShowModal, page, setPage }) => {
 
@@ -24,7 +23,6 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
     setShowMovies(true);
     setPage(1);
   };
-
 
   function darkMode() {
     let getDiv = document.getElementById('root');
@@ -51,13 +49,11 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
     setSearch(event.target.value);
   };
 
-
   const navigate = useNavigate();
   const toSerieView = () => { navigate("/serie") }
   const goBack = () => { navigate(-1) }
 
   return (
-
     <div className='navbar-container'>
       <Navbar expand="sm" className='navbar navbar-expand-lg bg-body-tertiary justify-content-center align-items-center '>
         <Nav className='align-items-center'>
@@ -83,10 +79,10 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
             setShowModal(false);
             setSearch('');
             setShowMovies(true);
-            setPage(1)
-            navigate("/")
-          }}>
-
+            setPage(1);
+            navigate("/");
+          }}
+        >
           <Modal.Header closeButton>
             <Col sm="5" className='pe-3'>
               <Form.Control
@@ -100,12 +96,12 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
             <Button onClick={handleSerieFilter} className="me-2">Séries</Button>
           </Modal.Header>
 
-          <Modal.Body className='d-flex flex-wrap justify-content-center bg-black'>
-
+          <Modal.Body className='d-flex flex-wrap justify-content-center'>
             <div className='d-flex justify-content-center'>
               <PaginationComponent
                 page={page}
-                setPage={setPage} />
+                setPage={setPage}
+              />
             </div>
 
             <div className='d-flex justify-content-center flex-wrap'>
@@ -120,7 +116,8 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
                     setPage={setPage}
                     onClick={handleClick}
                   />
-                ))}
+                ))
+              }
 
               {showSeries &&
                 popularSeries.map((serie) => (
@@ -131,7 +128,8 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
                     setShowModal={setShowModal}
                     setSearch={setSearch}
                   />
-                ))}
+                ))
+              }
             </div>
           </Modal.Body>
         </Modal>

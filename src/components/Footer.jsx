@@ -25,9 +25,9 @@ const Footer = ({ nextPage , previousPage, page, setPage}) => {
   const goBack = () => { navigate(-1) }
 
   return (
-      <div className='d-flex justify-content-evenly align-item-center m-3 '>
-        <a className='pe-5 text-decoration-none text-white' href='#'>Haut de page</a>
-        <a className='pe-5 text-decoration-none text-white' href="https://github.com/Delhumeur">Github</a>
+      <div className='d-flex justify-content-evenly align-item-center m-3'>
+        <a className='pe-5 text-decoration-none text-black' href='#'>Haut de page</a>
+        <a className='pe-5 text-decoration-none text-black' href="https://github.com/Delhumeur">Github</a>
     </div>    
   );
 }

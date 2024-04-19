@@ -50,7 +50,7 @@ const FavoritesView = () => {
               style={{ height: "100%", cursor: "pointer" }}
               className="img-fluid"
             />
-            <Button onClick={() => removeFavorite("movie", movie.id)}><img src="addfav.svg" alt="Remove from favorites" /></Button>
+            <Button onClick={() => removeFavorite("movie", movie.id)}><img src="/public/ASSET/addfav.svg" alt="Remove from favorites" /></Button>
           </Card>
         ))}
         
@@ -62,11 +62,11 @@ const FavoritesView = () => {
               style={{ height: "100%", cursor: "pointer" }}
               className="img-fluid"
             />
-            <Button onClick={() => removeFavorite("serie", serie.id)}><img src="addfav.svg" alt="Remove from favorites" /></Button>
+            <Button onClick={() => removeFavorite("serie", serie.id)}><img src="/public/ASSET/removefav.svg" alt="Remove from favorites" /></Button>
           </Card>
         ))}
       </div>
-      <div className="d-flex justify-content-center bg-black footer-container">
+      <div className="d-flex justify-content-center bg-body-tertiary">
                 <Footer />
             </div>
     </div>

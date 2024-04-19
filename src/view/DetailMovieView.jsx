@@ -1,8 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../components/ApiFilm';
 import { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
-import { StarMovieRating } from '../components/StarRating';
+import { Button, Card } from 'react-bootstrap';
 
 const DetailMovieView = () => {
     const { id } = useParams();
@@ -49,37 +48,27 @@ const DetailMovieView = () => {
     };
 
     return (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center min-vh-100 ">
             {movie ? (
-                <>
-                    <Card style={{ width: '20rem' }} className="border-3 m-3">
-                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
-                    </Card>
-                    <Card style={{ width: '30rem' }} className="border-3 m-3">
+                <div className='d-flex '>
+                    <div style={{ width: '30rem' }} className="justify-content-center  ">
+                        <Card.Img variant="top" className='' src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
+                    </div>
+                    <div style={{ width: '30rem' }} className="border-3 m-3">
                         <Card.Body className='bg-dark'>
                             <Card.Title className='text-white'><h1>{movie.title}</h1></Card.Title>
                             <Card.Title className='text-white'>{movie.overview}</Card.Title>
-                            <Card.Title className='text-white'>{finalNote}</Card.Title>
-                            <StarMovieRating movie={movie} />
-                        
-                        {/* Utiliser la variable d'état pour afficher dynamiquement le lien d'ajout ou de suppression */}
+                            <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
+                            Note : {finalNote}
                         {isInFavorites ? (
-                            <img
-                                src="/public/ASSET/addfav.svg"
-                                alt="Remove from favorites"
-                                onClick={removeFavorite}
-                            />
+                            <Button variant='danger' onClick={removeFavorite}>Supprimer des Favoris</Button>
                         ) : (
-                            <img
-                                src="/public/ASSET/removefav.svg"
-                                alt="Add to favorites"
-                                onClick={addFavorite}
-                                style={{ cursor: "pointer" }}
-                            />
+                            <Button variant='success' onClick={addFavorite}>Ajouter aux Favoris</Button>
                         )}
+                        </div>
                         </Card.Body>
-                    </Card>
-                </>
+                    </div>
+                </div>
             ) : (
                 <p>Loading...</p>
             )}

@@ -1,8 +1,9 @@
 import { fetchSerieDetails } from '../components/ApiFilm';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import { StarSerieRating } from '../components/StarRating';
+import Footer from '../components/Footer';
 
 
 const DetailSerieView = () => {
@@ -54,44 +55,35 @@ const DetailSerieView = () => {
     };
 
     return (
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center vh-100 ">
             {serie ? (
                 <>
-                    <Card style={{ width: '20rem' }} className="border-3 m-3">
-                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`} />
+                    <Card style={{ width: '30rem' }} className="border-3 m-3">
+                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w1280/${serie.poster_path}`} />
                     </Card>
                     <Card style={{ width: '30rem' }} className="border-3 m-3">
                         <Card.Body className='bg-dark'>
-                            <Card.Title className='text-white'><h1>{serie.title}</h1></Card.Title>
+                            <Card.Title className='text-white'><h1>{serie.name}</h1></Card.Title>
                             <Card.Title className='text-white'>{serie.overview}</Card.Title>
-                            <Card.Title className='text-white'>{finalNote}</Card.Title>
-                            <StarSerieRating serie={serie} />
-                        </Card.Body>
-                        {/* Utiliser la variable d'état pour afficher dynamiquement le lien d'ajout ou de suppression */}
+                            <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
+                            Note : {finalNote}
                         {isInFavorites ? (
-                            <img
-
-                                src="addfav.svg"
-                                alt="Remove from favorites"
-                                className="position-absolute bottom-0 start-50 translate-middle-x m-3 "// Utilisation de position-absolute pour positionner l'icône en bas à droite
-                                onClick={removeFavorite}
-                                style={{}}
-                            />
+                            <Button variant='danger' onClick={removeFavorite}>Supprimer des Favoris</Button>
                         ) : (
-                            <img
-                                src="removefav.svg"
-                                alt="Add to favorites"
-                                className="position-absolute bottom-0 start-50 translate-middle-x m-3" // Utilisation de position-absolute pour positionner l'icône en bas au centre
-                                onClick={addFavorite}
-                                style={{ cursor: "pointer" }}
-                            />
+                            <Button variant='success' onClick={addFavorite}>Ajouter aux Favoris</Button>
                         )}
+
+                        </div>
+                        </Card.Body>
                     </Card>
                 </>
             ) : (
                 <p>Loading...</p>
             )}
+
         </div>
+        
+        
     );
 };
 
