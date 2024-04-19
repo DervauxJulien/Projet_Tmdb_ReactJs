@@ -26,7 +26,7 @@ const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }
                     />
                 ))}
             </div>
-            <div className="d-flex justify-content-center bg-body-tertiary">
+            <div className="row d-flex justify-content-center bg-body-tertiary">
                 <Footer />
             </div>
         </div>

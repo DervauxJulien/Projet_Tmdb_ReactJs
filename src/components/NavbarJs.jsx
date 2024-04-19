@@ -25,7 +25,7 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
   };
 
   function darkMode() {
-    let getDiv = document.getElementById('root');
+    let getDiv = document.getElementById('body');
     let darkModeOn = getDiv.classList.contains('darkMode');
 
     if (!darkModeOn) {
