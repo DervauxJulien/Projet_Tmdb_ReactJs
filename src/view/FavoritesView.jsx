@@ -30,10 +30,10 @@ const FavoritesView = () => {
     <>
       <div className="container-fluid vh-100">
         <h1 className="d-flex justify-content-center p-2">My Favorites</h1>
-        <div className="d-flex flex-wrap justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center min-vh-100">
           {movieFavorites.map((movie) => (
-            <div key={movie.id} className='row col-6 col-sm-4 col-md-4 col-lg-6 d-flex justify-content-center bg-dark align-items-center rounded-3 m-2'>
-              <div className="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 justify-content-center p-5">
+            <div key={movie.id} className='row col-12 col-sm-6 col-md-4 col-lg-6 d-flex justify-content-center bg-dark align-items-center rounded-3 m-2'>
+              <div className="col-12 col-sm-10 col-md-4 col-lg-4 col-xl-4 justify-content-center p-5">
                 <div className="h-100">
                   <Card.Img variant="top" className='img-fluid' src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
                 </div>
@@ -50,8 +50,8 @@ const FavoritesView = () => {
             </div>
           ))}
           {serieFavorites.map((serie) => (
-            <div key={serie.id} className='row col-6 col-sm-4 col-md-4 col-lg-6 d-flex justify-content-center bg-dark align-items-center rounded-3 m-2'>
-              <div className="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 justify-content-center p-5">
+            <div key={serie.id} className='row col-12 col-sm-6 col-md-4 col-lg-6 d-flex justify-content-center bg-dark align-items-center rounded-3 m-2'>
+              <div className="col-12 col-sm-10 col-md-4 col-lg-4 col-xl-4 justify-content-center p-5">
                 <div className="h-100">
                   <Card.Img variant="top" className='img-fluid' src={`https://image.tmdb.org/t/p/w1280/${serie.poster_path}`} />
                 </div>
