@@ -23,6 +23,8 @@ html{
     max-width: 17vw;
     height: auto;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.2s ease;
 }
 
 .carouselEnTete {
@@ -56,4 +58,13 @@ html{
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+/* ----------------------------------------------------- */
+
+.cardStyle:hover{
+    transform: scale(1.02);
+    padding: 10px;
+    transition: transform 0.2s ease-in;
+
 }

@@ -7,10 +7,10 @@ const HomeView = ({ movies, popularSeries }) => {
     return (
 
         <div className="contrainer-fluid">
-            <div className="d-flex flex-wrap justify-content-center pb-2 ">
+            <div className="d-flex flex-wrap justify-content-center pb-2">
                 <CarouselMovie movies={movies} />
             </div>
-            <div className="d-flex flex-wrap justify-content-center  pb-2">
+            <div className="d-flex flex-wrap justify-content-center pb-2 container-lg">
                 <CarouselCardMovie movies={movies} />
                 <CarouselCardSerie popularSeries={popularSeries} />
             </div>

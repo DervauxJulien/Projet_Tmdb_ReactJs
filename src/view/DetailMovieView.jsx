@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../components/ApiFilm';
 import { useEffect, useState } from 'react';
-import { Button, Card, Col, Row } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { StarMovieRating } from '../components/StarRating';
 
 const DetailMovieView = () => {
@@ -53,7 +53,7 @@ const DetailMovieView = () => {
             {movie ? (
                 <>
                     <Card style={{ width: '20rem' }} className="border-3 m-3">
-                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} />
+                        <Card.Img variant="top" src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
                     </Card>
                     <Card style={{ width: '30rem' }} className="border-3 m-3">
                         <Card.Body className='bg-dark'>
@@ -65,17 +65,14 @@ const DetailMovieView = () => {
                         {/* Utiliser la variable d'état pour afficher dynamiquement le lien d'ajout ou de suppression */}
                         {isInFavorites ? (
                             <img
-                                src="addfav.svg"
+                                src="/public/ASSET/addfav.svg"
                                 alt="Remove from favorites"
-                                className="position-absolute bottom-0 start-50 translate-middle-x m-3 "// Utilisation de position-absolute pour positionner l'icône en bas à droite
                                 onClick={removeFavorite}
-                                style={{}}
                             />
                         ) : (
                             <img
-                                src="removefav.svg"
+                                src="/public/ASSET/removefav.svg"
                                 alt="Add to favorites"
-                                className="position-absolute bottom-0 start-50 translate-middle-x m-3" // Utilisation de position-absolute pour positionner l'icône en bas au centre
                                 onClick={addFavorite}
                                 style={{ cursor: "pointer" }}
                             />

@@ -1,0 +1,130 @@
+{
+  "hash": "b9d31369",
+  "configHash": "04ae89a0",
+  "lockfileHash": "292b6903",
+  "browserHash": "14911a0a",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "37f2172f",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "8ff32669",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "e18558f9",
+      "needsInterop": false
+    },
+    "react-bootstrap": {
+      "src": "../../node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "acb8585c",
+      "needsInterop": false
+    },
+    "react-bootstrap/Navbar": {
+      "src": "../../node_modules/react-bootstrap/esm/Navbar.js",
+      "file": "react-bootstrap_Navbar.js",
+      "fileHash": "7315aa88",
+      "needsInterop": false
+    },
+    "react-bootstrap/Nav": {
+      "src": "../../node_modules/react-bootstrap/esm/Nav.js",
+      "file": "react-bootstrap_Nav.js",
+      "fileHash": "8b874050",
+      "needsInterop": false
+    },
+    "react-bootstrap/Form": {
+      "src": "../../node_modules/react-bootstrap/esm/Form.js",
+      "file": "react-bootstrap_Form.js",
+      "fileHash": "da851f0e",
+      "needsInterop": false
+    },
+    "react-bootstrap/Col": {
+      "src": "../../node_modules/react-bootstrap/esm/Col.js",
+      "file": "react-bootstrap_Col.js",
+      "fileHash": "b44a63f2",
+      "needsInterop": false
+    },
+    "react-bootstrap/Button": {
+      "src": "../../node_modules/react-bootstrap/esm/Button.js",
+      "file": "react-bootstrap_Button.js",
+      "fileHash": "4763ac8d",
+      "needsInterop": false
+    },
+    "react-bootstrap/Carousel": {
+      "src": "../../node_modules/react-bootstrap/esm/Carousel.js",
+      "file": "react-bootstrap_Carousel.js",
+      "fileHash": "08bcad11",
+      "needsInterop": false
+    },
+    "react-bootstrap/Pagination": {
+      "src": "../../node_modules/react-bootstrap/esm/Pagination.js",
+      "file": "react-bootstrap_Pagination.js",
+      "fileHash": "040d68a4",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-TPTTYSA4": {
+      "file": "chunk-TPTTYSA4.js"
+    },
+    "chunk-2OULKUIT": {
+      "file": "chunk-2OULKUIT.js"
+    },
+    "chunk-ZS4T6VJA": {
+      "file": "chunk-ZS4T6VJA.js"
+    },
+    "chunk-R5SLUSND": {
+      "file": "chunk-R5SLUSND.js"
+    },
+    "chunk-DG6777VA": {
+      "file": "chunk-DG6777VA.js"
+    },
+    "chunk-UWZXFKA6": {
+      "file": "chunk-UWZXFKA6.js"
+    },
+    "chunk-CF7VRK36": {
+      "file": "chunk-CF7VRK36.js"
+    },
+    "chunk-NO4TJU3D": {
+      "file": "chunk-NO4TJU3D.js"
+    },
+    "chunk-YGGZSDZV": {
+      "file": "chunk-YGGZSDZV.js"
+    },
+    "chunk-ZZI5OP7L": {
+      "file": "chunk-ZZI5OP7L.js"
+    },
+    "chunk-2UPCGIUS": {
+      "file": "chunk-2UPCGIUS.js"
+    },
+    "chunk-ZLYRTO5R": {
+      "file": "chunk-ZLYRTO5R.js"
+    },
+    "chunk-GFNMXQ6B": {
+      "file": "chunk-GFNMXQ6B.js"
+    },
+    "chunk-CNLNXYDG": {
+      "file": "chunk-CNLNXYDG.js"
+    },
+    "chunk-BNSZRLIE": {
+      "file": "chunk-BNSZRLIE.js"
+    },
+    "chunk-MEEAXF66": {
+      "file": "chunk-MEEAXF66.js"
+    },
+    "chunk-SCFAMNOP": {
+      "file": "chunk-SCFAMNOP.js"
+    },
+    "chunk-UPDK7Z2H": {
+      "file": "chunk-UPDK7Z2H.js"
+    }
+  }
+}
