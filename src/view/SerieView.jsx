@@ -4,7 +4,10 @@ import PaginationComponent from "../components/PaginationComponent";
 
 const SerieView = ({ handleSearch, popularSeries, page, setPage }) => {
   return (
-    <div>
+    <div className="container-fluid">
+      <div className="d-flex justify-content-center pt-3">
+        <h1>Serie</h1>
+      </div>
       <div className="d-flex justify-content-center m-3">
         <PaginationComponent
           serie={popularSeries}
@@ -12,10 +15,9 @@ const SerieView = ({ handleSearch, popularSeries, page, setPage }) => {
           setPage={setPage}
         />
       </div>
-      <div className="d-flex justify-content-center ">
-        <h1>Serie</h1>
-      </div>
-        <div className="d-flex flex-wrap justify-content-center">
+
+      <div className="min-vh-100 d-flex">
+        <div className="col-sm-12 d-flex flex-wrap justify-content-center">
           {popularSeries &&
             popularSeries.map((series) => (
               <CardSerie
@@ -24,10 +26,11 @@ const SerieView = ({ handleSearch, popularSeries, page, setPage }) => {
                 handleSearch={handleSearch}
               />
             ))}
+        </div>
       </div>
-      <div className="row d-flex justify-content-center bg-body-tertiary">
-                <Footer />
-            </div>
+      <div className="row d-flex justify-content-center bg-dark">
+        <Footer />
+      </div>
     </div>
   );
 };

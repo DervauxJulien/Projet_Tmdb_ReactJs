@@ -44,36 +44,36 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
   };
 
   return (
-<div className='navbar-container d-flex justify-content-center bg-body-tertiary '>
-  <Navbar expand="lg" className='navbar-expand-lg '>
+<div className='navbar-container d-flex justify-content-center bg-dark'>
+  <Navbar expand="lg" className='navbar-expand-lg'>
     <Navbar.Brand>
-      <Link className='text-dark' to={'/'}>
+      <Link className='text-white text-decoration-none' to={'/'}>
         HOME
       </Link>
-    </Navbar.Brand>
-    <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setExpanded(!expanded)} />
+    </Navbar.Brand >
+    <Navbar.Toggle aria-controls="responsive-navbar-nav" className='bg-white me-5' onClick={() => setExpanded(!expanded)} />
     <Navbar.Collapse id="responsive-navbar-nav" className={expanded ? 'show' : ''}>
-      <Nav className='mr-auto'>
-        <Link onClick={() => setPage(1)} className='nav-link text-dark' to={'/'}>
+      <Nav className='mr-auto text-white'>
+        <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/'}>
           Home
         </Link>
-        <Link onClick={() => setPage(1)} className='nav-link text-dark' to={'/film'}>
+        <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/film'}>
           Film
         </Link>
-        <Link onClick={() => setPage(1)} className='nav-link text-dark' to={'/serie'}>
+        <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/serie'}>
           Serie
         </Link>
-        <Link className='nav-link text-dark' to={'/favoris'}>
+        <Link className='nav-link text-white' to={'/favoris'}>
           Favorite
         </Link>
-        <Link onClick={() => setShowModal(true)} className='nav-link text-dark cursor-pointer'>
+        <Link onClick={() => setShowModal(true)} className='nav-link text-white cursor-pointer'>
           Rechercher
         </Link>
       </Nav>
-      <Form>
+    </Navbar.Collapse>
+    <Form className=''>
         <Form.Check type="switch" onClick={darkMode} />
       </Form>
-    </Navbar.Collapse>
   </Navbar>
 
       <Modal

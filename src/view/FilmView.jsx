@@ -4,7 +4,10 @@ import PaginationComponent from "../components/PaginationComponent";
 
 const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }) => {
     return (
-        <div>
+        <div className="container-fluid ">
+            <div className="d-flex justify-content-center pt-3">
+                <h1>Film</h1>
+            </div>
             <div className="d-flex justify-content-center m-3">
                 <PaginationComponent
                     movies={movies}
@@ -12,21 +15,20 @@ const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }
                     setPage={setPage}
                 />
             </div>
-            <div className="d-flex justify-content-center ">
-            <h1>Film</h1>
+            <div className="min-vh-100 d-flex">
+                <div className="col-sm-12 d-flex flex-wrap justify-content-center">
+                    {movies.map((movie) => (
+                        <CardMovie
+                            key={movie.id}
+                            movie={movie}
+                            handleSearch={handleSearch}
+                            favorite={favorite}
+                            setFavortie={setFavorite}
+                        />
+                    ))}
+                </div>
             </div>
-            <div className="d-flex flex-wrap justify-content-center ">
-                {movies.map((movie) => (
-                    <CardMovie
-                        key={movie.id}
-                        movie={movie}
-                        handleSearch={handleSearch}
-                        favorite={favorite}
-                        setFavortie={setFavorite}
-                    />
-                ))}
-            </div>
-            <div className="row d-flex justify-content-center bg-body-tertiary">
+            <div className="row d-flex justify-content-center bg-dark">
                 <Footer />
             </div>
         </div>

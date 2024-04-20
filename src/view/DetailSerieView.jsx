@@ -66,7 +66,7 @@ const DetailSerieView = () => {
                         </div>
                         <div style={{ width: '30rem' }} className="border-3 m-3">
                             <Card.Body className='d-flex flex-column justify-content-center'>
-                                <Card.Title className='text-white'><h1>{serie.name}</h1></Card.Title>
+                                <Card.Title className='text-white'><h2>{serie.name}</h2></Card.Title>
                                 <Card.Title className='text-white'>{serie.overview}</Card.Title>
                                 <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
                                     Note : {finalNote}
@@ -83,7 +83,7 @@ const DetailSerieView = () => {
                     <p>Loading...</p>
                 )}
             </div>
-            <div className="row d-flex justify-content-center bg-body-tertiary">
+            <div className="row d-flex justify-content-center bg-dark">
                 <Footer />
             </div>
         </div>

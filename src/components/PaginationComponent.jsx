@@ -15,10 +15,10 @@ function PaginationComponent({ page, setPage, totalPages }) {
 
   return (
     <Pagination>
-      <Pagination.First onClick={() => setPage(1)} />
-      <Pagination.Prev onClick={previousPage} />
-      <Pagination.Item active>{page}</Pagination.Item>
-      <Pagination.Next onClick={() => setPage(page + 1)} />
+      <Pagination.First linkClassName='bg-dark text-white' onClick={() => setPage(1)} />
+      <Pagination.Prev linkClassName='bg-dark text-white' onClick={previousPage} />
+      <Pagination.Item linkClassName='bg-dark text-white border-white'active>{page}</Pagination.Item>
+      <Pagination.Next linkClassName='bg-dark text-white' onClick={() => setPage(page + 1)} />
     </Pagination>
   );
 }

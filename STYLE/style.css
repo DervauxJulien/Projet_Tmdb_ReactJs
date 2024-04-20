@@ -1,6 +1,18 @@
-* {
-    padding: 0;
-    margin: 0;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+#body{
+    background-color: black;
+    color: white;
+}
+body{
+    font-family: 'Roboto', cursive !important;
+}
+
+h1{
+    font-weight: bold !important;
+    font-size: 5rem !important;
+    padding: 20px;
 }
 
 .fullScreen{
@@ -14,7 +26,7 @@
 }
 
 .cardStyle {
-    max-width: 17vw;
+    width: 17rem;
     height: auto;
     cursor: pointer;
     transform: scale(1);
@@ -26,14 +38,14 @@
 }
 
 .carouselEnTete {
-    width: 80%;
-    margin: auto; 
+    width: 10rem;
     max-height: 400px; 
 }
 .carouselImgEnTete {
-    height: 40vh;
+    height: 20rem;
+    width: auto;
     object-fit: cover;
-    filter: brightness(0.5); 
+    filter: brightness(0.4); 
 }
 
 .carouselStyle {
@@ -42,14 +54,6 @@
 
 .search{
     cursor: pointer;
-}
-
-.sticky{
-    position: sticky;
-}
-
-.fullScreen{
-    height: 100vh;
 }
 
 .navbar-container {
