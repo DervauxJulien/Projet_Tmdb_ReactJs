@@ -50,7 +50,11 @@ const DetailMovieView = () => {
 
     return (
         <div className='container-fluid'>
+            <div className="d-flex justify-content-center pt-3">
+                <h1>Description du film</h1>
+            </div>
             <div className="d-flex justify-content-center min-vh-100">
+
                 {movie ? (
                     <div className='row col-10 col-sm-10 col-md-10 col-lg-8 d-flex justify-content-center bg-dark align-items-center rounded-3 m-auto '>
                         <div className="row col-10 col-sm-10 col-md-10 col-lg-6 col-xl-6 justify-content-center p-5">

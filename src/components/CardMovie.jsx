@@ -13,8 +13,8 @@ const CardMovie = ({ movie, setShowModal, setSearch}) => {
     };
 
     return (
-        <div className="d-flex flex-wrap justify-content-center cardStyle">
-            <Card className="m-1">
+        <div className="d-flex flex-wrap justify-content-center cardStyle ">
+            <Card className="m-1 border-0">
                 <Card.Img
                     variant="top"
                     onClick={handleClick}

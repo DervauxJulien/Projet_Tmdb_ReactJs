@@ -12,7 +12,7 @@ export const CarouselMovie = ({ movies }) => {
             {movies.map((movie) => (
                 <Carousel.Item key={movie.id} interval={10000} >
                     <Card.Img
-                        className="carouselImgEnTete "
+                        className="carouselImgEnTete"
                         src={`https://image.tmdb.org/t/p/w1280/${movie.backdrop_path}`}
                         alt={movie.title} 
                     />

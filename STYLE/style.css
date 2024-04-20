@@ -7,6 +7,7 @@
 }
 body{
     font-family: 'Roboto', cursive !important;
+    font-size: 1.3rem !important;
 }
 
 h1{
@@ -45,7 +46,6 @@ h1{
     height: 20rem;
     width: auto;
     object-fit: cover;
-    filter: brightness(0.4); 
 }
 
 .carouselStyle {

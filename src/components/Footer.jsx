@@ -27,7 +27,7 @@ const Footer = ({ nextPage , previousPage, page, setPage}) => {
   return (
       <div className='d-flex justify-content-evenly align-item-center m-3'>
         <a className='pe-5 text-decoration-none text-white' href='#'>Haut de page</a>
-        <a className='pe-5 text-decoration-none text-white' href="https://github.com/Delhumeur">Github</a>
+        <a className='pe-5 text-decoration-none text-white' href="https://github.com/Delhumeur" target='blank'>Github</a>
     </div>    
   );
 }

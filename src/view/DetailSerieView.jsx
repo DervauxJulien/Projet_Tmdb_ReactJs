@@ -56,6 +56,9 @@ const DetailSerieView = () => {
 
     return (
         <div className='container-fluid'>
+                        <div className="d-flex justify-content-center pt-3">
+                <h1>Description de la série</h1>
+            </div>
             <div className="d-flex justify-content-center align-items-center  min-vh-100">
                 {serie ? (
                     <div className='row col-10 col-sm-10 col-md-10 col-lg-8 d-flex justify-content-center bg-dark align-items-center rounded-3'>
