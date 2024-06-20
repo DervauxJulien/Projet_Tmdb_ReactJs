@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Navbar, Nav, NavDropdown, Form, Button, Modal, Col } from 'react-bootstrap';
+import { Navbar, Nav, Form, Button, Modal, Col } from 'react-bootstrap';
 import CardMovie from './CardMovie';
 import CardSerie from './CardSerie';
 import PaginationComponent from './PaginationComponent';
@@ -19,17 +19,6 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
     setPage(1);
   };
 
-  function darkMode() {
-    let getDiv = document.getElementById('body');
-    let darkModeOn = getDiv.classList.contains('darkMode');
-
-    if (!darkModeOn) {
-      getDiv.classList.add('darkMode');
-    } else {
-      getDiv.classList.remove('darkMode');
-    }
-  }
-
   const handleMovieFilter = () => {
     setShowMovies(true);
     setShowSeries(false);
@@ -47,14 +36,16 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
   return (
     <div className='navbar-container d-flex justify-content-center bg-dark'>
       <Navbar expand="lg" className='navbar-expand-lg'>
-        <Navbar.Brand>
+        <Navbar.Brand >
+          <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/'}>
+            <img className='logo' src="/public/ASSET/EmpireMovie.png" alt="Logo du site 'EmpireMovie'" />
+          </Link>
+
         </Navbar.Brand >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className='bg-white me-5' onClick={() => setExpanded(!expanded)} />
         <Navbar.Collapse id="responsive-navbar-nav" className={expanded ? 'show' : ''}>
           <Nav className='mr-auto text-white'>
-            <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/'}>
-              Home
-            </Link>
+
             <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/film'}>
               Film
             </Link>
@@ -70,7 +61,6 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
           </Nav>
         </Navbar.Collapse>
         <Form className=''>
-          <Form.Check type="switch" onClick={darkMode} />
         </Form>
       </Navbar>
 
