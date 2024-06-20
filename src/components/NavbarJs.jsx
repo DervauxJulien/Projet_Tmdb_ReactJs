@@ -48,9 +48,6 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
     <div className='navbar-container d-flex justify-content-center bg-dark'>
       <Navbar expand="lg" className='navbar-expand-lg'>
         <Navbar.Brand>
-          <Link className='text-white text-decoration-none' to={'/'}>
-            HOME
-          </Link>
         </Navbar.Brand >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className='bg-white me-5' onClick={() => setExpanded(!expanded)} />
         <Navbar.Collapse id="responsive-navbar-nav" className={expanded ? 'show' : ''}>
