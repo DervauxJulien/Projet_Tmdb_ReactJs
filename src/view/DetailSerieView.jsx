@@ -2,7 +2,6 @@ import { fetchSerieDetails } from '../components/ApiFilm';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { StarSerieRating } from '../components/StarRating';
 import Footer from '../components/Footer';
 
 
