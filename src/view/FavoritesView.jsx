@@ -29,7 +29,7 @@ const FavoritesView = () => {
   return (
     <>
       <div className="container-fluid vh-100">
-        <h1 className="d-flex justify-content-center p-5">My Favorites</h1>
+        <h1 className="d-flex justify-content-center p-5">Mes Favoris</h1>
         <div className="d-flex flex-wrap justify-content-center min-vh-100">
           {movieFavorites.map((movie) => (
             <div key={movie.id} className='row col-12 col-sm-6 col-md-4 col-lg-6 d-flex justify-content-center bg-dark align-items-center rounded-3 m-2'>
@@ -43,7 +43,7 @@ const FavoritesView = () => {
                   <Card.Title className='text-white'><h2>{movie.title}</h2></Card.Title>
                   <Card.Title className='text-white'>{movie.overview}</Card.Title>
                   <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
-                    <Button variant='danger' onClick={() => removeFavorite("movie", movie.id)}>Remove from Favorites</Button>
+                    <Button variant='danger' onClick={() => removeFavorite("movie", movie.id)}>Supprimer des favoris</Button>
                   </div>
                 </Card.Body>
               </div>

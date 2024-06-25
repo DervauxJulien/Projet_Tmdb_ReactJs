@@ -4,7 +4,7 @@ import PaginationComponent from "../components/PaginationComponent";
 
 const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }) => {
     return (
-        <div className="container-fluid ">
+        <div className="container-fluid">
             <div className="d-flex justify-content-center pt-3">
                 <h1>Films</h1>
             </div>

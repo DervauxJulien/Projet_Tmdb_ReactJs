@@ -14,9 +14,10 @@ body{
 
 h1{
     font-weight: bold !important;
-    font-size: 5rem !important;
+    font-size: 4rem !important;
     padding: 20px;
 }
+
 
 .logo{
     width: 80px;
