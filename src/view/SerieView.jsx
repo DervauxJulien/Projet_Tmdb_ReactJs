@@ -6,7 +6,7 @@ const SerieView = ({ handleSearch, popularSeries, page, setPage }) => {
   return (
     <div className="container-fluid">
       <div className="d-flex justify-content-center pt-3">
-        <h1>Serie</h1>
+        <h1>Series</h1>
       </div>
       <div className="d-flex justify-content-center m-3">
         <PaginationComponent

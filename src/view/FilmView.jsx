@@ -6,7 +6,7 @@ const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }
     return (
         <div className="container-fluid ">
             <div className="d-flex justify-content-center pt-3">
-                <h1>Film</h1>
+                <h1>Films</h1>
             </div>
             <div className="d-flex justify-content-center m-3">
                 <PaginationComponent
