@@ -53,11 +53,11 @@ const DetailMovieView = () => {
             <div className="d-flex justify-content-center pt-3">
                 <h1>Description du film</h1>
             </div>
-            <div className="d-flex justify-content-center min-vh-100">
+            <div className="d-flex justify-content-center min-vh-100 mb-5">
 
                 {movie ? (
                     <div className='row col-10 col-sm-10 col-md-10 col-lg-8 d-flex justify-content-center bg-dark align-items-center rounded-3 m-auto '>
-                        <div className="row col-10 col-sm-10 col-md-10 col-lg-6 col-xl-6 justify-content-center p-5">
+                        <div className="row col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 justify-content-center p-5">
                             <div className="h-100 ">
                                 <Card.Img variant="top" className='img-fluid' src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
                             </div>

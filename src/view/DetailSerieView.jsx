@@ -58,10 +58,10 @@ const DetailSerieView = () => {
                         <div className="d-flex justify-content-center pt-3">
                 <h1>Description de la série</h1>
             </div>
-            <div className="d-flex justify-content-center align-items-center  min-vh-100">
+            <div className="d-flex justify-content-center align-items-center mb-5  min-vh-100">
                 {serie ? (
                     <div className='row col-10 col-sm-10 col-md-10 col-lg-8 d-flex justify-content-center bg-dark align-items-center rounded-3'>
-                        <div className="col-10 col-sm-10 col-md-10 col-lg-6 col-xl-6 justify-content-center p-5">
+                        <div className="col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 justify-content-center p-5">
                             <div className="h-100 ">
                                 <Card.Img variant="top" className='img-fluid' src={`https://image.tmdb.org/t/p/w1280/${serie.poster_path}`} />
                             </div>
