@@ -20,23 +20,28 @@ function App() {
   const [page, setPage] = useState(1);
 
   // j'utilise useEffect pour effectuer une action après le rendu du composant
+  // j'utilise une fonction asynchrone pour fetcher les données de films et séries
+  // Si il n'y a pas de recherche, je fetch les données populaires de films et séries
+  // et je stock la data dans "movies" et "popularSeries"
+
+  // Si il y a une recherche, fetch les données correspondantes à la recherche
+  // Fetch les films correspondant à la recherche et met à jour l'état 'movies'
+  // Fetch les séries correspondant à la recherche et met à jour l'état 'popularSeries'
+
   useEffect(() => {
-    // Si il n'y a pas de recherche,je fetch les données populaires de films et séries
-    if (!search) {
-      const fetchData = async () => {
+    const fetchData = async () => {
+      if (!search) {
         setMovies(await fetchPopularMovies(page));
         setPopularSeries(await fetchSeries(page));
-      }
-      fetchData();
-    } else {
-      // Si il y a une recherche,je fetch les données correspondantes à la recherche
-      const fetchData = async () => {
+      } 
+      else {
         setMovies(await searchMovies(search));
         setPopularSeries(await searchSeries(search));
       }
-      fetchData();
     }
-  }, [search, page]); // Dépendances : se déclenche quand search ou page change
+    // Appel de la fonction asynchrone pour fetcher les données
+    fetchData();
+  }, [search, page]); // Dépendances : se déclenche quand 'search' ou 'page' change
 
   // Fonctions pour la pagination
   const nextPage = () => setPage(page + 1);
