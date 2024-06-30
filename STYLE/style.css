@@ -28,11 +28,6 @@ h1{
     width: 100vw;
 }
 
-.darkMode{
-    background-color: black;
-    color: white;
-}
-
 .cardStyle {
     width: 17rem;
     height: auto;

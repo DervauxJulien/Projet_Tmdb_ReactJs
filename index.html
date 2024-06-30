@@ -1,19 +1,25 @@
 <!doctype html>
-<html lang="en">
-
+<html lang="fr">
 <head>
+  <!-- Encodage des caractères -->
   <meta charset="UTF-8" />
+  <!-- Ajout de mon logo pour l'icône de la page dans l'onglet du navigateur -->
   <link rel="icon" type="image/svg+xml" href="/public/ASSET/EmpireMovie.png" />
+  <!-- Optimisation de l'affichage sur les appareils mobiles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EmpireMovie</title>
+  <!-- Ajout de mon titre de la page affiché dans l'onglet du navigateur -->
+  <title>Empire Movie</title>
+  <!-- Préconnexion au domaine des polices Google pour optimiser le chargement de la font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Import de la police Roboto 400 et 700 depuis Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
+<!-- Ajout de l'id "body" afin d'appliquer un backgroud-color -->
 <body id="body">
+  <!-- Conteneur principal de mon application React, avec hauteur à 100% de la vue -->
   <div class="vh-100" id="root"></div>
+  <!-- Chargement du script principal de mon application en tant que module pour pouvoir effectuer des import et export -->
   <script type="module" src="/src/main.jsx"></script>
 </body>
-
 </html>

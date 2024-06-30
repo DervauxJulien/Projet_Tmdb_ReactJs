@@ -33,22 +33,20 @@ const FavoritesView = () => {
         <div className="d-flex flex-wrap justify-content-center min-vh-100">
           {movieFavorites.map((movie) => (
             <div key={movie.id} className='row col-12 col-sm-6 col-md-4 col-lg-6 d-flex justify-content-center bg-dark align-items-center rounded-3 m-2'>
-              <div className="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 d-flex justify-content-center p-5">
-                {/* <div className="h-100"> */}
-                  <div style={{ width: '30rem' }} className="border-3 m-3">
+              <div className="row col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 d-flex justify-content-center p-5 ">
+                <div style={{ width: '30rem' }} className="border-3 m-3">
                   <Card.Img variant="top" className='img-fluid' src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
-
-                <Card.Body className='d-flex flex-column justify-content-center'>
-                  <Card.Title className='text-white'><h2>{movie.title}</h2></Card.Title>
-                  <Card.Title className='text-white'>{movie.overview}</Card.Title>
-                  <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
-                    <Button variant='danger' onClick={() => removeFavorite("movie", movie.id)}>Supprimer des favoris</Button>
-                  </div>
-                </Card.Body>
-              </div>
+                  <Card.Body className='d-flex flex-column justify-content-center'>
+                    <Card.Title className='text-white'><h2>{movie.title}</h2></Card.Title>
+                    <Card.Title className='text-white'>{movie.overview}</Card.Title>
+                    <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
+                      <Button variant='danger' onClick={() => removeFavorite("movie", movie.id)}>Supprimer des favoris</Button>
+                    </div>
+                  </Card.Body>
+                </div>
                 {/* </div> */}
               </div>
-              
+
             </div>
           ))}
           {serieFavorites.map((serie) => (
