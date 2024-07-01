@@ -1,13 +1,18 @@
+
+
+
 import CardMovie from "../components/CardMovie";
 import Footer from "../components/Footer";
 import PaginationComponent from "../components/PaginationComponent";
 
-const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }) => {
+// Définition du composant FilmView qui reçoit plusieurs props pour gérer les films, la pagination et les favoris
+const FilmView = ({ movies, handleSearch, page, setPage }) => {
     return (
+        // Container principal utilisant la classe Bootstrap pour un conteneur fluide qui s'étend sur toute la largeur
         <div className="container-fluid">
-            <div className="d-flex justify-content-center pt-3">
+            <header className="d-flex justify-content-center pt-3">
                 <h1>Films</h1>
-            </div>
+            </header>
             <div className="d-flex justify-content-center m-3">
                 <PaginationComponent
                     movies={movies}
@@ -15,24 +20,23 @@ const FilmView = ({ movies, handleSearch, setFavorite, favorite, page, setPage }
                     setPage={setPage}
                 />
             </div>
-            <div className="min-vh-100 d-flex">
+            {/* Section principale pour afficher les cartes de films, avec une hauteur minimale de 100vh et flexbox */}
+            <section className="min-vh-100 d-flex">
                 <div className="col-sm-12 d-flex flex-wrap justify-content-center">
+                    {/* Boucle à travers les films et rend une carte pour chaque film */}
                     {movies.map((movie) => (
                         <CardMovie
-                            key={movie.id}
+                            key={movie.id} // Clé unique pour chaque carte de film
                             movie={movie}
                             handleSearch={handleSearch}
-                            favorite={favorite}
-                            setFavortie={setFavorite}
                         />
                     ))}
                 </div>
-            </div>
-            <div className="row d-flex justify-content-center bg-dark">
+            </section>
+            <footer className="row d-flex justify-content-center bg-dark">
                 <Footer />
-            </div>
+            </footer>
         </div>
     );
 }
-
 export default FilmView;

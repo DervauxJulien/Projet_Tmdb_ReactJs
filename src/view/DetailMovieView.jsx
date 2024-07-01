@@ -1,3 +1,5 @@
+
+// Importation du hook useParams pour récupérer le paramètre ID dans l'URL
 import { useParams } from 'react-router-dom';
 import { fetchMovieDetails } from '../components/ApiFilm';
 import { useEffect, useState } from 'react';
@@ -5,88 +7,88 @@ import { Button, Card } from 'react-bootstrap';
 import Footer from '../components/Footer';
 
 const DetailMovieView = () => {
-    const { id } = useParams();
-    const [movie, setMovie] = useState([]);
-
-    let finalNote = ((movie.vote_average) / 2).toFixed(1);
-
-    useEffect(() => {
-        const fetchDetails = async () => {
-            setMovie(await fetchMovieDetails(id));
-        };
-        fetchDetails();
-    }, [id]);
-
-    // État pour suivre si le film est dans les favoris
+    const { id } = useParams(); // Je récupère l'ID du film depuis le paramètre de l'URL
+    const [movie, setMovie] = useState(null);
     const [isInFavorites, setIsInFavorites] = useState(false);
 
-    // Vérifier si le film est dans les favoris lors du chargement initial
+    // Calcul de la note finale du film divisé par 2 pour noter sur 5
+    const finalNote = ((movie?.vote_average || 0) / 2).toFixed(1);
+    //  Je charge les détails du film depuis l'API lors du changement de l'ID
     useEffect(() => {
-        const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
-        setIsInFavorites(favorites[movie.id]);
-    }, []);
+        const fetchDetails = async () => {
+            const movieData = await fetchMovieDetails(id);
+            setMovie(movieData); // Mise à jour de l'état avec les données du film récupérées
+        };
+        fetchDetails();
+    }, [id]); // changement de l'ID pour recharger les détails du film
 
+    // Je vérifie si le film est dans les favoris lors de chaque changement
+    useEffect(() => {
+        // Récupération des favoris depuis le localStorage
+        const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
+        // Mise à jour de l'état isInFavorites en fonction de la présence du film dans les favoris
+        setIsInFavorites(favorites[movie?.id]);
+    }, [movie]);
+
+    // Fonction pour ajouter le film aux favoris
     const addFavorite = () => {
         const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
-        if (!favorites[movie.id]) {
-            favorites[movie.id] = movie;
+        // Vérification si le film n'est pas déjà dans les favoris
+        if (!favorites[movie?.id]) {
+            // Ajout du film aux favoris
+            favorites[movie?.id] = movie;
+            // Mise à jour des favoris dans le localStorage
             localStorage.setItem('favorites/movie', JSON.stringify(favorites));
-            setIsInFavorites(true); // Mettre à jour l'état pour indiquer que le film est maintenant dans les favoris
-            console.log(`Film ajouté aux favoris : ${movie.title}`);
-        } else {
-            console.log("Le film est déjà dans la liste des favoris.");
+            setIsInFavorites(true);
         }
     };
 
+    // Fonction pour supprimer le film des favoris
     const removeFavorite = () => {
         const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
-        if (favorites[movie.id]) {
-            delete favorites[movie.id];
+        if (favorites[movie?.id]) {
+            delete favorites[movie?.id];
             localStorage.setItem('favorites/movie', JSON.stringify(favorites));
-            setIsInFavorites(false); // Mettre à jour l'état pour indiquer que le film n'est plus dans les favoris
-            console.log(`Film supprimé des favoris : ${movie.title}`);
+            setIsInFavorites(false);
         }
     };
 
     return (
-        <div className='container-fluid'>
+        <div className="container-fluid">
             <div className="d-flex justify-content-center pt-3">
                 <h1>Description du film</h1>
             </div>
-            <div className="d-flex justify-content-center min-vh-100 mb-5">
-
-                {movie ? (
-                    <div className='row col-10 col-sm-10 col-md-10 col-lg-8 d-flex justify-content-center bg-dark align-items-center rounded-3 m-auto '>
-                        <div className="row col-10 col-sm-10 col-md-10 col-lg-10 col-xl-10 justify-content-center p-5">
-                            <div className="h-100 ">
-                                <Card.Img variant="top" className='img-fluid' src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
-                            </div>
-                        </div>
-                        <div style={{ width: '30rem' }} className="border-3 m-3">
-                            <Card.Body className='d-flex flex-column justify-content-center'>
-                                <Card.Title className='text-white'><h2>{movie.title}</h2></Card.Title>
-                                <Card.Title className='text-white'>{movie.overview}</Card.Title>
-                                <div className='d-flex justify-content-evenly align-items-center mt-5 text-white'>
-                                    Note : {finalNote}
+            {/* Vérification si les détails du film sont chargés */}
+            {movie ? (
+                <div className="row col-12 col-md-10 col-lg-8 m-auto">
+                    <div className="col-12 col-md-4 p-3">
+                        <Card.Img variant="top" className="img-fluid" src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
+                    </div>
+                    <div className="col-12 col-md-8 p-3">
+                        <Card.Body className="border-3 text-white">
+                            <Card.Title><h2>{movie.title}</h2></Card.Title>
+                            <Card.Text>{movie.overview}</Card.Text>
+                            <div className="d-flex justify-content-between align-items-center mt-4">
+                                <div className="text-white">Note : {finalNote}</div>
+                                <div>
                                     {isInFavorites ? (
-                                        <Button variant='danger' onClick={removeFavorite}>Supprimer des Favoris</Button>
+                                        <Button variant="danger" onClick={removeFavorite}>Supprimer des Favoris</Button>
                                     ) : (
-                                        <Button variant='success' onClick={addFavorite}>Ajouter aux Favoris</Button>
+                                        <Button variant="success" onClick={addFavorite}>Ajouter aux Favoris</Button>
                                     )}
                                 </div>
-                            </Card.Body>
-                        </div>
+                            </div>
+                        </Card.Body>
                     </div>
-                ) : (
-                    <p>Loading...</p>
-                )}
-            </div>
+                </div>
+            ) : (
+                <p className="text-center">Chargement...</p>
+            )}
             <div className="row d-flex justify-content-center bg-dark">
                 <Footer />
             </div>
         </div>
     );
-
 };
 
 export default DetailMovieView;
