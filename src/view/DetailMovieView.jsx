@@ -1,6 +1,7 @@
 
+
 // Importation du hook useParams pour récupérer le paramètre ID dans l'URL
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; 
 import { fetchMovieDetails } from '../components/ApiFilm';
 import { useEffect, useState } from 'react';
 import { Button, Card } from 'react-bootstrap';
@@ -11,18 +12,18 @@ const DetailMovieView = () => {
     const [movie, setMovie] = useState(null);
     const [isInFavorites, setIsInFavorites] = useState(false);
 
-    // Calcul de la note finale du film divisé par 2 pour noter sur 5
-    const finalNote = ((movie?.vote_average || 0) / 2).toFixed(1);
-    //  Je charge les détails du film depuis l'API lors du changement de l'ID
+// Calcul de la note finale du film divisé par 2 pour noter sur 5
+    const finalNote = ((movie?.vote_average || 0) / 2).toFixed(1); 
+//  Je charge les détails du film depuis l'API lors du changement de l'ID
     useEffect(() => {
         const fetchDetails = async () => {
             const movieData = await fetchMovieDetails(id);
             setMovie(movieData); // Mise à jour de l'état avec les données du film récupérées
         };
-        fetchDetails();
+        fetchDetails(); 
     }, [id]); // changement de l'ID pour recharger les détails du film
 
-    // Je vérifie si le film est dans les favoris lors de chaque changement
+ // Je vérifie si le film est dans les favoris lors de chaque changement
     useEffect(() => {
         // Récupération des favoris depuis le localStorage
         const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
@@ -30,10 +31,10 @@ const DetailMovieView = () => {
         setIsInFavorites(favorites[movie?.id]);
     }, [movie]);
 
-    // Fonction pour ajouter le film aux favoris
+        // Fonction pour ajouter le film aux favoris
     const addFavorite = () => {
         const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
-        // Vérification si le film n'est pas déjà dans les favoris
+         // Vérification si le film n'est pas déjà dans les favoris
         if (!favorites[movie?.id]) {
             // Ajout du film aux favoris
             favorites[movie?.id] = movie;
@@ -43,7 +44,7 @@ const DetailMovieView = () => {
         }
     };
 
-    // Fonction pour supprimer le film des favoris
+ // Fonction pour supprimer le film des favoris
     const removeFavorite = () => {
         const favorites = JSON.parse(localStorage.getItem('favorites/movie')) || {};
         if (favorites[movie?.id]) {
@@ -58,8 +59,8 @@ const DetailMovieView = () => {
             <div className="d-flex justify-content-center pt-3">
                 <h1>Description du film</h1>
             </div>
-            {/* Vérification si les détails du film sont chargés */}
-            {movie ? (
+             {/* Vérification si les détails du film sont chargés */}
+            {movie ? ( 
                 <div className="row col-12 col-md-10 col-lg-8 m-auto">
                     <div className="col-12 col-md-4 p-3">
                         <Card.Img variant="top" className="img-fluid" src={`https://image.tmdb.org/t/p/w1280/${movie.poster_path}`} />
@@ -82,7 +83,7 @@ const DetailMovieView = () => {
                     </div>
                 </div>
             ) : (
-                <p className="text-center">Chargement...</p>
+                <p className="text-center">Chargement...</p> 
             )}
             <div className="row d-flex justify-content-center bg-dark">
                 <Footer />

@@ -22,6 +22,7 @@ const DetailSerieView = () => {
         fetchDetails();
     }, [id]); // changement de l'ID pour recharger les détails du film
 
+    // Je vérifie si le film est dans les favoris lors de chaque changement
     useEffect(() => {
         // Récupération des favoris depuis le localStorage
         const favorites = JSON.parse(localStorage.getItem('favorites/serie')) || {};
@@ -57,6 +58,7 @@ const DetailSerieView = () => {
             <div className="d-flex justify-content-center pt-3">
                 <h1>Description de la série</h1>
             </div>
+            {/* Vérification si les détails du film sont chargés */}
             {serie ? (
                 <div className="row col-12 col-md-10 col-lg-8 m-auto">
                     <div className="col-12 col-md-4 p-3">
