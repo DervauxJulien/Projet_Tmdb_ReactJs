@@ -8,6 +8,7 @@ import CardMovie from './CardMovie';
 import CardSerie from './CardSerie';
 import PaginationComponent from './PaginationComponent';
 import Footer from './Footer';
+import imgUrl from '../assets/empire-movie.png'
 
 // Je récupère mes props passé depuis ma page App.jsx
 const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShowModal, page, setPage }) => {
@@ -49,7 +50,7 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
         <Navbar.Brand>
           {/* Lien vers la page d'accueil */}
           <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/'}>
-            <img className='logo' src="public/empire-movie.png" alt="Logo du site 'Empire Movie'" />
+            <img className='logo' src={imgUrl} alt="Logo du site 'Empire Movie'" />
           </Link>
         </Navbar.Brand>
         {/* Bouton de toggler pour le menu responsive */}
