@@ -49,7 +49,7 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
         <Navbar.Brand>
           {/* Lien vers la page d'accueil */}
           <Link onClick={() => setPage(1)} className='nav-link text-white' to={'/'}>
-            <img className='logo' src="public/asset/empire-movie.png" alt="Logo du site 'Empire Movie'" />
+            <img className='logo' src="public/empire-movie.png" alt="Logo du site 'EmpireMovie'" />
           </Link>
         </Navbar.Brand>
         {/* Bouton de toggler pour le menu responsive */}
