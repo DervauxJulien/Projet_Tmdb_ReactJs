@@ -54,13 +54,13 @@ const DetailSerieView = () => {
     };
 
     return (
-        <div className="container-fluid">
+        <div className="container-fluid h-100">
             <div className="d-flex justify-content-center pt-3">
                 <h1>Description de la série</h1>
             </div>
             {/* Vérification si les détails du film sont chargés */}
             {serie ? (
-                <div className="row col-12 col-md-10 col-lg-8 m-auto">
+                <div className="row col-12 col-md-10 col-lg-8 m-auto h-100">
                     <div className="col-12 col-md-4 p-3">
                         <Card.Img variant="top" className="img-fluid" src={`https://image.tmdb.org/t/p/w1280/${serie.poster_path}`} />
                     </div>
