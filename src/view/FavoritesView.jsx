@@ -72,7 +72,7 @@ const FavoritesView = () => {
                 <Card.Img 
                   style={{ width: '100%', height: 'auto', maxWidth: '20rem' }} 
                   variant="top" 
-                  className='img-fluid p-3' 
+                  className='img-fluid p-3 ' 
                   src={`https://image.tmdb.org/t/p/w1280/${serie.poster_path}`} 
                 />
                 <Card.Body className='d-flex flex-column justify-content-center'>

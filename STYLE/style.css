@@ -1,30 +1,28 @@
 
-
-#body{
+/* Style général du body : fond noir, texte blanc 
+texte couleur blanc et ajout de la police dans 
+tout le corp du projet
+*/
+#body {
     background-color: black;
     color: white;
-}
-body{
     font-family: 'Roboto', cursive !important;
     font-size: 1.3rem !important;
 }
 
-h1{
+/* Style pour les titres modifier */
+h1 {
     font-weight: bold !important;
     font-size: 4rem !important;
     padding: 20px;
 }
 
-
-.logo{
+.logo {
     width: 80px;
 }
 
-.fullScreen{
-    height: 100vh;
-    width: 100vw;
-}
-
+/* Définition d'une taille pour mes cartes,
+modification du curseur pour l'UX */
 .cardStyle {
     width: 17rem;
     height: auto;
@@ -33,14 +31,11 @@ h1{
     transition: transform 0.2s ease;
 }
 
-.cardStyleFav {
-    width: 17rem;
-}
-
 .carouselEnTete {
     width: 10rem;
     max-height: 400px; 
 }
+
 .carouselImgEnTete {
     height: 20rem;
     width: auto;
@@ -51,20 +46,29 @@ h1{
     max-width: 100vw;
 }
 
-.search{
+.search {
     cursor: pointer;
 }
 
+/* position sticky, toujours en haut, 
+index de 1000 pour être au-dessus 
+des autres éléments */
 .navbar-container {
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* ----------------------------------------------------- */
+/* ---------------------------------- */
 
-.cardStyle:hover{
+/* Style pour les cartes au survol (
+zoom) et ajout de padding */
+.cardStyle:hover {
     transform: scale(1.02);
     padding: 10px;
-
 }
+
+
+
+
+
