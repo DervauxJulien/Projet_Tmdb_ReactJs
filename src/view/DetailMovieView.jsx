@@ -55,8 +55,6 @@ const DetailMovieView = () => {
     };
 
     return (
-        <>
-        
         <div className="container-fluid">
             <div className="d-flex justify-content-center pt-3">
                 <h1>Description du film</h1>
@@ -87,11 +85,10 @@ const DetailMovieView = () => {
             ) : (
                 <p className="text-center">Chargement...</p> 
             )}
-        </div>
-        <div className="row d-flex justify-content-center bg-dark">
+            <div className="row d-flex justify-content-center bg-dark">
                 <Footer />
             </div>
-        </>
+        </div>
     );
 };
 
