@@ -1,7 +1,9 @@
 
 
-// Utilisation de ma clé API que j'ai stockée dans une variable d'environnement pour la sécuriser car je travaille
-// sur mon dépôt GitHub. J'ai donc inclus mon fichier .env dans mon .gitignore afin de ne pas la pousser dans le dépôt distant.
+// Utilisation de ma clé API que j'ai stockée dans une variable d'environnement 
+// pour la sécuriser car je travaille
+// sur mon dépôt GitHub. J'ai donc inclus mon fichier .env dans mon .gitignore 
+// afin de ne pas la pousser dans le dépôt distant.
 const api_key = import.meta.env.VITE_API_KEY;
 
 // J'utilise baseUrl comme raccourci pour stocker le début de l'URL qui ne change pas pour l'API

@@ -21,7 +21,7 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
   const handleClick = () => {
     // Naviguer vers la page de détail du film en transportant son ID afin d'alimenter mon call API
     navigate(`/film/detail/${movies.id}`);
-    // Fermer le modal après la navigation
+    // Fermer le modal après la navigation 
     setShowModal(false);
     // Une fois la navigation réussie, je réinitialise la recherche et j'affiche les films par défaut
     setSearch('');
@@ -37,7 +37,6 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
     setShowMovies(false);
     setShowSeries(true);
   };
-
   // Fonction pour gérer le changement dans le champ de recherche
   const handleInputChange = (event) => {
     setSearch(event.target.value);
@@ -74,7 +73,6 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
             </Link>
           </Nav>
         </Navbar.Collapse>
-        {/* Formulaire de recherche dans le Navbar */}
       </Navbar>
 
       {/* Modal de recherche */}
@@ -145,9 +143,7 @@ const NavbarJs = ({ search, setSearch, movies, popularSeries, showModal, setShow
               ))}
           </div>
         </Modal.Body>
-        {/* Footer du Modal */}
         <div className="d-flex justify-content-center bg-dark">
-          <Footer />
         </div>
       </Modal>
     </div>
